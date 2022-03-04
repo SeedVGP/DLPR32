@@ -5,4 +5,4 @@ Need to create
   2. Test Bench
   3. Complete verification of Processor
   4. Syhtesis Scripts
-  5. Sample TestVectors Compiled from ROSCV toolchain
+  5. Sample TestVectors Compiled from RISC-V toolchain
