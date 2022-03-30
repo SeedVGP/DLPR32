@@ -102,3 +102,35 @@ endcase
 end
 endmodule
 
+
+
+//-----------------------------------TEST BENCH----------------------------------------------------------
+`timescale 1ns/1ps 
+module addss_tb(); 
+
+reg clk,cs_add,rst;
+  reg [15:0] x,y;
+wire [15:0] sum;
+wire rdy_add;
+  addss u0(clk,cs_add,rst,x,y,sum,rdy_add);
+initial
+begin
+clk=1'b0;
+forever #5 clk=~clk;
+end
+initial
+begin
+  //$dumpfile("dump.vcd");
+//$dumpvars;
+rst=1'b1;
+cs_add=0;
+#10;
+rst=1'b0;
+cs_add=1;
+x=16'b1011010000000000;
+y=16'b1000010000000000;
+
+#100;
+$finish;
+end
+endmodule
